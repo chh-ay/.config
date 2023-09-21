@@ -125,9 +125,6 @@ symbol = " "
 [nodejs]
 symbol = " "
 
-[package]
-symbol = " "
-
 [perl]
 symbol = " "
 
