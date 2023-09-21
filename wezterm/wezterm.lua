@@ -8,11 +8,12 @@ if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
 end
 
 return {
-	color_scheme = "Catppuccin Macchiato",
+	color_scheme = "Catppuccin Mocha",
 	default_prog = default_prog,
 
-	font_size = 13.0,
-	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" }),
+	font_size = 12.0,
+	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium", stretch = "Normal", style = "Normal" }),
+	line_height = 1.1,
 
 	window_padding = {
 		left = 10,
