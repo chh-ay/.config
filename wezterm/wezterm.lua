@@ -12,7 +12,7 @@ return {
 	default_prog = default_prog,
 
 	font_size = 12.0,
-	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Medium", stretch = "Normal", style = "Normal" }),
+	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold", stretch = "Normal", style = "Normal" }),
 
 	window_padding = {
 		left = 10,
