@@ -11,8 +11,8 @@ return {
 	color_scheme = "Catppuccin Macchiato",
 	default_prog = default_prog,
 
-	font_size = 12.0,
-	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold", stretch = "Normal", style = "Normal" }),
+	font_size = 13.0,
+	font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Regular", stretch = "Normal", style = "Normal" }),
 
 	window_padding = {
 		left = 10,
@@ -20,7 +20,7 @@ return {
 		top = 0,
 		bottom = 0,
 	},
-	window_background_opacity = 0.25,
+	window_background_opacity = 0.45,
 	window_decorations = "RESIZE",
 
 	enable_tab_bar = false,
