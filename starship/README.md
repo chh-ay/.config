@@ -1,0 +1,1 @@
+# Symlink it to ~/.config
