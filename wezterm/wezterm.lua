@@ -3,7 +3,11 @@ local default_prog
 
 -- if wezterm.target_triple == 'x86_64-pc-windows-mscv' then
 
-if wezterm.target_triple == "x86_64-unknown-linux-gnu" then
+if
+	wezterm.target_triple == "x86_64-unknown-linux-gnu"
+	or wezterm.target_triple == "x86_64-apple-darwin"
+	or wezterm.target_triple == "aarch64-apple-darwin"
+then
 	default_prog = { "/usr/bin/fish", "-l" }
 end
 
