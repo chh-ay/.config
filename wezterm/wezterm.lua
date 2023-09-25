@@ -43,13 +43,13 @@ return {
 	line_height = 1.1,
 
 	window_padding = {
-		left = 15,
-		right = 15,
-		top = 10,
+		left = 5,
+		right = 5,
+		top = 5,
 		bottom = 0,
 	},
-	window_background_opacity = 0.92,
-	window_decorations = "INTEGRATED_BUTTONS|RESIZE",
+	window_background_opacity = 0.82,
+	window_decorations = "RESIZE",
 
 	enable_tab_bar = false,
 	enable_scroll_bar = false,
