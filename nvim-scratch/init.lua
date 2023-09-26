@@ -1,8 +1,8 @@
 if vim.g.vscode or vim.g.vscodium then
-  require "core"
-	require "chai.lazy"
+  require("core")
+  require("chai.lazy")
 end
 
-require "core"
-require "chai"
-require "lsp"
+require("core")
+require("chai")
+require("lsp")

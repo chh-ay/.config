@@ -1,2 +1,2 @@
-require "chai.lazy"
-require "chai.colorscheme"
+require("chai.lazy")
+require("chai.colorscheme")

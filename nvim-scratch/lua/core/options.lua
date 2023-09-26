@@ -4,7 +4,7 @@ vim.g.maplocalleader = " "
 local opt = vim.opt
 
 opt.clipboard = "unnamedplus"
-opt.completeopt = {"menu", "menuone", "noselect" }
+opt.completeopt = { "menu", "menuone", "noselect" }
 opt.fileencoding = "utf-8"
 opt.guifont = "monospace:h12"
 opt.signcolumn = "yes:1"
@@ -60,17 +60,17 @@ opt.scrolloff = 8
 opt.sidescrolloff = 8
 
 opt.linebreak = true
-opt.whichwrap = 'h,l,<,>,[,],~'
-opt.breakindentopt = 'shift:2,min:20'
-vim.wo.showbreak = 'NONE'
+opt.whichwrap = "h,l,<,>,[,],~"
+opt.breakindentopt = "shift:2,min:20"
+vim.wo.showbreak = "NONE"
 
-opt.shortmess:append "c"
+opt.shortmess:append("c")
 opt.whichwrap:append("<,>,[,]")
-vim.cmd [[set fillchars-=vert:\| | set fillchars+=vert:\ ]]
-vim.cmd [[set fillchars+=eob:\ ]]
+vim.cmd([[set fillchars-=vert:\| | set fillchars+=vert:\ ]])
+vim.cmd([[set fillchars+=eob:\ ]])
 
-opt.grepformat = '%f:%l:%c:%m,%f:%l:%m'
-opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
+opt.grepformat = "%f:%l:%c:%m,%f:%l:%m"
+opt.grepprg = "rg --vimgrep --no-heading --smart-case"
 
 -- Fix markdown indentation settings
 vim.g.markdown_recommended_style = 0

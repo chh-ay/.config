@@ -19,5 +19,4 @@ require("lazy").setup("plugins", {
 		border = "rounded",
 	},
 	checker = { enabled = true },
-	debug = false,
 })
