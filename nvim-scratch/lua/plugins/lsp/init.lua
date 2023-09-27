@@ -127,17 +127,11 @@ return {
   -- cmdline tools and lsp servers
   {
     "williamboman/mason.nvim",
-    cmd = "Mason",
-    keys = { { "<leader>cm", "<cmd>Mason<cr>", desc = "Mason" } },
     build = ":MasonUpdate",
     opts = {
       ensure_installed = {
         "stylua",
         "shfmt",
-        "cspell",
-        "prisma-language-server",
-        "svelte-language-server",
-        "sonarlint-language-server",
         -- "flake8",
       },
     },

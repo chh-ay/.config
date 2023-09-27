@@ -1,11 +1,23 @@
-local maps = require("utils.keymaps")
+-- local maps = require("utils.keymaps")
 
 local M = {
   -- file explorer
   "nvim-neo-tree/neo-tree.nvim",
   branch = "v3.x",
   cmd = "Neotree",
-  keys = maps.neoTree,
+  keys =  { { mode = { "n" }, "<C-e>", "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
+  {
+    mode = { "n" },
+    "<leader>e",
+    function()
+      if vim.bo.filetype == "neo-tree" then
+        vim.cmd.wincmd("p")
+      else
+        vim.cmd.Neotree("focus")
+      end
+    end,
+    desc = "Toggle Explorer Focus",
+  },},
   deactivate = function()
     vim.cmd([[Neotree close]])
   end,

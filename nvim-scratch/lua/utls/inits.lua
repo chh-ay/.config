@@ -1,0 +1,21 @@
+-- if vim.g.vscode or vim.g.vscodium then
+--   require("chai.lazy")
+--   require("plugins.treesitter")
+--   require("plugins.flash")
+--   require("plugins.illuminate")
+-- end
+
+-- require("chai.lazy")
+-- require("plugins.misc")
+-- require("plugins.treesitter")
+-- require("plugins.telescope")
+-- require("plugins.colorizer")
+-- require("plugins.colorscheme")
+-- require("plugins.flash")
+-- require("plugins.notification")
+-- require("plugins.gitblame")
+-- require("plugins.illuminate")
+-- require("plugins.cmp")
+-- require("plugins.lsp")
+-- require("plugins.null-ls")
+-- require("plugins.luasnip")
