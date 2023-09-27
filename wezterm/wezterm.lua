@@ -40,15 +40,15 @@ return {
 			font = wezterm.font("JetBrainsMono Nerd Font", { weight = "Bold", stretch = "Normal", style = "Italic" }),
 		},
 	},
-	line_height = 1.1,
+	line_height = 1.05,
 
 	window_padding = {
-		left = 5,
-		right = 5,
+		left = 10,
+		right = 10,
 		top = 5,
 		bottom = 0,
 	},
-	window_background_opacity = 0.82,
+	window_background_opacity = 0.92,
 	window_decorations = "RESIZE",
 
 	enable_tab_bar = false,
