@@ -106,7 +106,10 @@ alias jctl="journalctl -p 3 -xb"
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
 # neovim alias
-alias vim="nvim"
+alias v="nvim"
+
+# git
+alias lg="lazygit"
 
 # time desync issue with wsl2 solved
 alias timeSync="sudo ntpdate time.windows.com"
