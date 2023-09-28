@@ -109,7 +109,7 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 alias vim="nvim"
 
 # time desync issue with wsl2 solved
-alias timesync="sudo ntpdate time.windows.com"
+alias timeSync="sudo ntpdate time.windows.com"
 
 # pnpm
 set -gx PNPM_HOME "/home/chhay/.local/share/pnpm"
