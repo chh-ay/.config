@@ -34,47 +34,12 @@ if test -d ~/Applications/depot_tools
     end
 end
 
-
 ## Starship prompt
 if status --is-interactive
     # source ("/usr/bin/starship" init fish --print-full-init | psub)
     starship init fish | source
 end
 
-
-## Advanced command-not-found hook
-source /usr/share/doc/find-the-command/ftc.fish
-
-
-## Functions
-# Functions needed for !! and !$ https://github.com/oh-my-fish/plugin-bang-bang
-function __history_previous_command
-    switch (commandline -t)
-        case "!"
-            commandline -t $history[1]
-            commandline -f repaint
-        case "*"
-            commandline -i !
-    end
-end
-
-function __history_previous_command_arguments
-    switch (commandline -t)
-        case "!"
-            commandline -t ""
-            commandline -f history-token-search-backward
-        case "*"
-            commandline -i '$'
-    end
-end
-
-if [ "$fish_key_bindings" = fish_vi_key_bindings ]
-    bind -Minsert ! __history_previous_command
-    bind -Minsert '$' __history_previous_command_arguments
-else
-    bind ! __history_previous_command
-    bind '$' __history_previous_command_arguments
-end
 
 # Fish command history
 function history
@@ -111,15 +76,6 @@ alias cat='bat --style header --style snip --style changes --style header'
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 # Common use
-alias grubup="sudo update-grub"
-alias fixpacman="sudo rm /var/lib/pacman/db.lck"
-alias tarnow='tar -acf '
-alias untar='tar -xvf '
-alias wget='wget -c '
-alias rmpkg="sudo pacman -Rdd"
-alias psmem='ps auxf | sort -nr -k 4'
-alias psmem10='ps auxf | sort -nr -k 4 | head -10'
-alias upd='/usr/bin/garuda-update'
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
@@ -140,12 +96,6 @@ alias mirrord="sudo reflector --latest 50 --number 20 --sort delay --save /etc/p
 alias mirrors="sudo reflector --latest 50 --number 20 --sort score --save /etc/pacman.d/mirrorlist"
 alias mirrora="sudo reflector --latest 50 --number 20 --sort age --save /etc/pacman.d/mirrorlist"
 
-# Help people new to Arch
-alias apt='man pacman'
-alias apt-get='man pacman'
-alias please='sudo'
-alias tb='nc termbin.com 9999'
-
 # Cleanup orphaned packages
 alias cleanup='sudo pacman -Rns (pacman -Qtdq)'
 
@@ -158,10 +108,8 @@ alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 # neovim alias
 alias vim="nvim"
 
-## Run fastfetch if session is interactive
-# if status --is-interactive && type -q fastfetch
-#    fastfetch --load-config dr460nized
-# end
+# time desync issue with wsl2 solved
+alias time="sudo ntpdate time.windows.com"
 
 # pnpm
 set -gx PNPM_HOME "/home/chhay/.local/share/pnpm"
