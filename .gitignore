@@ -5,6 +5,7 @@
 !/wezterm
 !/starship
 !/nvim-scratch
+!/nvim-config
 
 # file
 !.gitignore
