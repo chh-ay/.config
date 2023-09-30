@@ -123,3 +123,6 @@ end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
+
+# git-delta
+set --export DELTA_FEATURES +side-by-side
