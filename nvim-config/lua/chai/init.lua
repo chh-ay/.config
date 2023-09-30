@@ -11,10 +11,18 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
-if vim.g.vscode or vim.g.vscodium then
-end
-
 require("lazy").setup({
+  -- Colorscheme
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
+    opts = { flavour = "mocha", transparent_background = true },
+    config = function(_, opts)
+      require("catppuccin").setup(opts)
+      vim.cmd.colorscheme "catppuccin"
+    end,
+  },
 
   -- Nvim-Tmux seemless navigation
   { "christoomey/vim-tmux-navigator", lazy = false },
