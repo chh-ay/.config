@@ -1,6 +1,12 @@
 ## FIRST LINE/ROW: Info & Status
 palette = "catppuccin_mocha"
 
+# Third param
+[directory]
+truncate_to_repo = true
+truncation_length = 0
+truncation_symbol = "repo: "
+
 # Before all the version info (python, nodejs, php, etc.)
 [git_status]
 ahead = "⇡${count}"

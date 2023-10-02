@@ -126,3 +126,6 @@ set --export PATH $BUN_INSTALL/bin $PATH
 
 # git-delta
 set --export DELTA_FEATURES +side-by-side
+
+# starship config file location
+set --export STARSHIP_CONFIG ~/.config/starship/starship.toml
