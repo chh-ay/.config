@@ -73,7 +73,6 @@ alias ip='ip -color'
 
 # Replace some more things with better alternatives
 alias cat='bat --style header --style snip --style changes --style header'
-alias c='cat'
 [ ! -x /usr/bin/yay ] && [ -x /usr/bin/paru ] && alias yay='paru'
 
 # Common use
