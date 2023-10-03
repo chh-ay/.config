@@ -3,16 +3,11 @@ return {
   "echasnovski/mini.nvim",
   version = false,
   config = function()
-    local mini_status_ok, mini = pcall(require, "mini")
-    if not mini_status_ok then
-      return
-    end
-
-    mini.bufremove.setup {
+    require("mini.bufremove").setup {
       keys = maps.bufremove,
     }
 
-    mini.comment.setup {
+    require("mini.comment").setup {
       mappings = {
         comment = "gc",
         comment_line = "gcc",
@@ -20,7 +15,7 @@ return {
       },
     }
 
-    mini.surround.setup {
+    require("mini.surround").setup {
       search_method = "cover_or_nearest",
       mappings = {
         add = "msa",
@@ -37,6 +32,6 @@ return {
       },
     }
 
-    mini.pairs.setup {}
+    require("mini.pairs").setup {}
   end,
 }
