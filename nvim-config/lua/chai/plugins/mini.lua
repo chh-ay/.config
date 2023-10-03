@@ -1,4 +1,4 @@
-local maps = require "chai.mappings".mini
+local maps = require("chai.mappings").mini
 return {
   "echasnovski/mini.nvim",
   version = false,
@@ -9,7 +9,7 @@ return {
     end
 
     mini.bufremove.setup {
-      keys = maps.bufremove
+      keys = maps.bufremove,
     }
 
     mini.comment.setup {
@@ -17,7 +17,7 @@ return {
         comment = "gc",
         comment_line = "gcc",
         textobject = "gc",
-      }
+      },
     }
 
     mini.surround.setup {
