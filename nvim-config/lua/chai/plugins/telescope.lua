@@ -1,10 +1,10 @@
-local map = require "chai.mappings".telescope
+local map = require("chai.mappings").telescope
 
 return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     {
-      "nvim-telescope/telescope-fzy-native.nvim",
+      "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       cond = function()
         return vim.fn.executable "make" == 1
@@ -14,7 +14,7 @@ return {
   keys = map.key,
   opts = {
     defaults = {
-      prompt_prefix = " ",
+      prompt_prefix = "  ",
       selection_caret = " ",
       mappings = map.opt,
     },
