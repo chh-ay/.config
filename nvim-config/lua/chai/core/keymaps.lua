@@ -66,3 +66,6 @@ vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Window left"
 vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Window Right" })
 vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Window down" })
 vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Window Up" })
+
+-- Lazygit
+vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "[L]azy [G]it" })
