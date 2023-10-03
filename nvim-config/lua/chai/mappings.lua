@@ -30,12 +30,10 @@ M.flash = {
 
 M.telescope = {
   key = {
-
     { mode = { "n" }, "<leader>,", "<cmd>Telescope buffers<cr>",         desc = "List Buffers" },
     { mode = { "n" }, "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Commands History" },
 
     -- find
-
     {
       mode = { "n", "v" },
       "<leader>fg",
