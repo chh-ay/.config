@@ -37,6 +37,7 @@ require("lazy").setup({
 
   -- Custom plugins
   { import = "chai.plugins" },
+  { import = "chai.plugins.lsp" },
 }, {
   -- auto install missing colorscheme
   install = { colorscheme = { "catppuccin" }, missing = true },

@@ -2,7 +2,7 @@ return {
   "nvimtools/none-ls.nvim",
   event = "BufReadPre",
   opts = function()
-    local none_ls = require "none-ls"
+    local none_ls = require "null-ls"
     local formatting = none_ls.builtins.formatting
     local diagnostics = none_ls.builtins.diagnostics
     local code_actions = none_ls.builtins.code_actions

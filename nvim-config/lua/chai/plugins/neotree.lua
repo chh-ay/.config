@@ -1,15 +1,15 @@
 local maps = require "chai.mappings"
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  keys = {},
+  keys = maps.neotree,
   deactivate = function()
-    vim.cmd([[Neotree close]])
+    vim.cmd [[Neotree close]]
   end,
   init = function()
     if vim.fn.argc() == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
       if stat and stat.type == "directory" then
-        require("neo-tree")
+        require "neo-tree"
       end
     end
   end,
@@ -28,8 +28,8 @@ return {
     default_component_configs = {
       indent = {
         with_expanders = true, -- if nil and file nesting is enabled, will enable expanders
-        expander_collapsed = "",
-        expander_expanded = "",
+        expander_collapsed = " ",
+        expander_expanded = " ",
         expander_highlight = "NeoTreeExpander",
       },
     },
