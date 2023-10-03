@@ -128,4 +128,11 @@ M.neotree = {
   },
 }
 
+M.mini = {
+  bufremove = {
+    { "<leader>br", function() require("mini.bufremove").delete(0, false) end, desc = "[B]uffer [R]emove" },
+    { "<leader>bR", function() require("mini.bufremove").delete(0, true) end,  desc = "[B]uffer [R]emove (Forced)" },
+  }
+}
+
 return M
