@@ -1,7 +1,6 @@
-local Utils = require "chai.utils"
-local map = require "chai.mappings"
+local map = require "chai.mappings".telescope
 
-local M = {
+return {
   "nvim-telescope/telescope.nvim",
   dependencies = {
     "nvim-lua/plenary.nvim",
@@ -13,12 +12,12 @@ local M = {
       end,
     },
   },
-  keys = map.telescope.key,
+  keys = map.key,
   opts = {
     defaults = {
       prompt_prefix = " ",
       selection_caret = " ",
-      mappings = map.telescope.opt,
+      mappings = map.opt,
     },
   },
   config = function(_, opts)
@@ -28,5 +27,3 @@ local M = {
     pcall(telescope.load_extension, "fzf")
   end,
 }
-
-return M
