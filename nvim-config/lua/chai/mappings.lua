@@ -31,7 +31,7 @@ M.flash = {
 M.telescope = {
   key = {
 
-    { mode = { "n" }, "<leader>,", "<cmd>Telescope buffers<cr>", desc = "List Buffers" },
+    { mode = { "n" }, "<leader>,", "<cmd>Telescope buffers<cr>",         desc = "List Buffers" },
     { mode = { "n" }, "<leader>:", "<cmd>Telescope command_history<cr>", desc = "Commands History" },
 
     -- find
@@ -48,8 +48,8 @@ M.telescope = {
       Utils.telescope("grep_string", { cwd = false, word_match = "-w" }),
       desc = "[F]ind [G]rep (cwd)",
     },
-    { mode = { "n" }, "<leader>ff", Utils.telescope "files", desc = "[F]ind [F]iles (root)" },
-    { mode = { "n" }, "<leader>fF", Utils.telescope "files", desc = "[F]ind [F]iles (cwd)" },
+    { mode = { "n" }, "<leader>ff", Utils.telescope "files",     desc = "[F]ind [F]iles (root)" },
+    { mode = { "n" }, "<leader>fF", Utils.telescope "files",     desc = "[F]ind [F]iles (cwd)" },
     { mode = { "n" }, "<leader>fw", Utils.telescope "live_grep", desc = "[F]ind [W]ords (root)" },
     { mode = { "n" }, "<leader>fW", Utils.telescope "live_grep", desc = "[F]ind [W]ords (cwd)" },
     {
@@ -83,16 +83,16 @@ M.telescope = {
       ["<a-t>"] = function(...)
         return require("trouble.providers.telescope").open_selected_with_trouble(...)
       end,
-      -- ["<a-i>"] = function()
-      --   local action_state = require("telescope.actions.state")
-      --   local line = action_state.get_current_line()
-      --   Utils.telescope("find_files", { no_ignore = true, default_text = line })()
-      -- end,
-      -- ["<a-h>"] = function()
-      --   local action_state = require("telescope.actions.state")
-      --   local line = action_state.get_current_line()
-      --   Utils.telescope("find_files", { hidden = true, default_text = line })()
-      -- end,
+      ["<a-i>"] = function()
+        local action_state = require("telescope.actions.state")
+        local line = action_state.get_current_line()
+        Utils.telescope("find_files", { no_ignore = true, default_text = line })()
+      end,
+      ["<a-h>"] = function()
+        local action_state = require("telescope.actions.state")
+        local line = action_state.get_current_line()
+        Utils.telescope("find_files", { hidden = true, default_text = line })()
+      end,
       ["<C-Down>"] = function(...)
         return require("telescope.actions").cycle_history_next(...)
       end,
@@ -111,6 +111,22 @@ M.telescope = {
         return require("telescope.actions").close(...)
       end,
     },
+  },
+}
+
+M.neotree = {
+  { mode = { "n" }, "<C-e>", "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
+  {
+    mode = { "n" },
+    "<leader>e",
+    function()
+      if vim.bo.filetype == "neo-tree" then
+        vim.cmd.wincmd("p")
+      else
+        vim.cmd.Neotree("focus")
+      end
+    end,
+    desc = "Toggle Explorer Focus",
   },
 }
 
