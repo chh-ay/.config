@@ -2,11 +2,57 @@ local M = {}
 
 M.root_patterns = { ".git", "lua" }
 
--- returns the root directory based on:
--- * lsp workspace folders
--- * lsp root_dir
--- * root pattern of filename of the current buffer
--- * root pattern of cwd
+M.icons = {
+  diagnostics = {
+    Error = " ",
+    Warn = " ",
+    Hint = " ",
+    Info = " ",
+  },
+  git = {
+    added = " ",
+    modified = " ",
+    removed = " ",
+  },
+  kinds = {
+    Array = " ",
+    Boolean = " ",
+    Class = " ",
+    Color = " ",
+    Constant = " ",
+    Constructor = " ",
+    Copilot = " ",
+    Enum = " ",
+    EnumMember = " ",
+    Event = " ",
+    Field = " ",
+    File = " ",
+    Folder = " ",
+    Function = " ",
+    Interface = " ",
+    Key = " ",
+    Keyword = " ",
+    Method = " ",
+    Module = " ",
+    Namespace = " ",
+    Null = " ",
+    Number = " ",
+    Object = " ",
+    Operator = " ",
+    Package = " ",
+    Property = " ",
+    Reference = " ",
+    Snippet = " ",
+    String = " ",
+    Struct = " ",
+    Text = " ",
+    TypeParameter = " ",
+    Unit = " ",
+    Value = " ",
+    Variable = " ",
+  }
+}
+
 ---@return string
 function M.get_root()
   ---@type string?
@@ -65,7 +111,8 @@ function M.telescope(builtin, opts)
         map("i", "<a-c>", function()
           local action_state = require "telescope.actions.state"
           local line = action_state.get_current_line()
-          M.telescope(params.builtin, vim.tbl_deep_extend("force", {}, params.opts or {}, { cwd = false, default_text = line }))()
+          M.telescope(params.builtin,
+            vim.tbl_deep_extend("force", {}, params.opts or {}, { cwd = false, default_text = line }))()
         end)
         return true
       end
