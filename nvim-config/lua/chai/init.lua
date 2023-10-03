@@ -29,6 +29,13 @@ require("lazy").setup({
 
   -- Nvim-Tmux seemless navigation
   { "christoomey/vim-tmux-navigator", lazy = false },
+
+  -- Misc
+  { "nvim-tree/nvim-web-devicons" },
+  { "nvim-lua/plenary.nvim" },
+  { "MunifTanjim/nui.nvim" },
+
+  -- Custom plugins
   { import = "chai.plugins" },
 }, {
   -- auto install missing colorscheme
