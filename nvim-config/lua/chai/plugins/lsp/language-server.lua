@@ -16,6 +16,8 @@ return {
     },
 
     config = function()
+      require("neodev").setup()
+
       local servers = {
         clangd = {},
         gopls = {},
