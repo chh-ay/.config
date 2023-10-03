@@ -24,6 +24,9 @@ require("lazy").setup({
     end,
   },
 
+  -- Lazygit (without floatterm)
+  { "kdheepak/lazygit.nvim" },
+
   -- Nvim-Tmux seemless navigation
   { "christoomey/vim-tmux-navigator", lazy = false },
   { import = "chai.plugins" },
