@@ -8,7 +8,7 @@ return {
       build = "make",
     },
   },
-  keys = map.keys,
+  keys = map.key,
   opts = {
     defaults = {
       prompt_prefix = "  ",

@@ -19,7 +19,7 @@ return {
 
       local servers = {
         gopls = {},
-        rust_analyzer = {},
+        rustanalyzer = {},
         tsserver = {},
         html = { filetypes = { "html", "twig", "hbs" } },
 
@@ -67,7 +67,7 @@ return {
         "lua-language-server",
         "markdownlint",
         "prettier",
-        "rust_analyzer",
+        "rust-analyzer",
         "shfmt", -- bash/shell
         "tailwindcss-language-server",
         "taplo", -- toml
