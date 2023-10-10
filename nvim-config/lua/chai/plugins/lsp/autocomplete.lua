@@ -1,3 +1,4 @@
+---@diagnostic disable: missing-fields
 return {
   "hrsh7th/nvim-cmp",
   dependencies = {
@@ -18,7 +19,6 @@ return {
     require("luasnip.loaders.from_vscode").lazy_load()
     luasnip.config.setup {}
 
-    ---@diagnostic disable-next-line: missing-fields
     cmp.setup {
       snippet = {
         expand = function(args)
@@ -57,6 +57,15 @@ return {
       sources = {
         { name = "nvim_lsp" },
         { name = "luasnip" },
+      },
+      formatting = {
+        format = function(_, item)
+          local icons = require("chai.utils").icons.kinds
+          if icons[item.kind] then
+            item.kind = icons[item.kind] .. " " .. item.kind
+          end
+          return item
+        end,
       },
     }
   end,
