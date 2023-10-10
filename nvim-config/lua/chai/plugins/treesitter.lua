@@ -7,9 +7,7 @@ return {
   opts = {
     ensure_installed = {
       "bash",
-      "c",
       "comment",
-      "cpp",
       "css",
       "dockerfile",
       "fish",
@@ -22,7 +20,6 @@ return {
       "jsonc",
       "lua",
       "prisma",
-      "python",
       "regex",
       "rust",
       "scss",
