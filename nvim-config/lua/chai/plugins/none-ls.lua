@@ -15,15 +15,13 @@ return {
         formatting.prettierd,
         formatting.clang_format,
         formatting.taplo, -- toml file
-        formatting.black, -- for python xd?? my favorite formatter "black"
         formatting.fish_indent,
 
         -- Diagnostics
         diagnostics.fish,
-        diagnostics.trail_space,
         diagnostics.cspell.with {
           diagnostics_postprocess = function(diagnostic)
-            diagnostic.severity = vim.diagnostic.severity["WARN"]
+            diagnostic.severity = vim.diagnostic.severity[" "]
           end,
         },
         diagnostics.editorconfig_checker,
