@@ -48,7 +48,8 @@ vim.keymap.set("v", "<", "<gv", { desc = "Indent to the left" })
 vim.keymap.set("v", ">", ">gv", { desc = "Indent to the right" })
 
 -- Navigate buffer
-vim.keymap.set("n", "<Tab>", "<cmd>bnext<cr>", { desc = "Next buffer" })
+vim.keymap.set("n", "<leader>bn", "<cmd>bnext<cr>", { desc = "[B]uffer [N]ext" })
+vim.keymap.set("n", "<leader>bp", "<cmd>bprev<cr>", { desc = "[B]uffer [P]rev" })
 
 -- Tmux navigation
 vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Window left" })
