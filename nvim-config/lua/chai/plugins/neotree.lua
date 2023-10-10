@@ -2,9 +2,6 @@ local maps = require "chai.mappings"
 return {
   "nvim-neo-tree/neo-tree.nvim",
   keys = maps.neotree,
-  deactivate = function()
-    vim.cmd [[Neotree close]]
-  end,
   init = function()
     if vim.fn.argc() == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))
@@ -14,6 +11,7 @@ return {
     end
   end,
   opts = {
+    close_if_last_window = true,
     sources = { "filesystem", "buffers", "git_status", "document_symbols" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "qf", "Outline" },
     filesystem = {
