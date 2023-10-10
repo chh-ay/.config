@@ -8,12 +8,11 @@ return {
       build = "make",
     },
   },
-  keys = map.key,
+  keys = map.keys,
   opts = {
     defaults = {
       prompt_prefix = "  ",
       selection_caret = " ",
-      mappings = map.opt,
     },
   },
   config = function(_, opts)
