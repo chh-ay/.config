@@ -1,7 +1,7 @@
-local maps = require "chai.mappings".neotree
+local maps = require("chai.mappings").neotree
 return {
   "nvim-neo-tree/neo-tree.nvim",
-  keys = maps.keys
+  keys = maps.key,
   init = function()
     if vim.fn.argc() == 1 then
       local stat = vim.loop.fs_stat(vim.fn.argv(0))

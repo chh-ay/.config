@@ -1,7 +1,7 @@
 local M = {}
 
 M.flash = {
-  keys = {
+  key = {
     {
       "s",
       mode = { "n", "x", "o" },
@@ -30,7 +30,7 @@ M.flash = {
 }
 
 M.telescope = {
-  keys = {
+  key = {
     { mode = { "n" }, "<leader>f?", require("telescope.builtin").oldfiles, desc = "[F]ind [?]recent Open Files " },
     { mode = { "n" }, "<leader>,", require("telescope.builtin").buffers, desc = "List Buffers" },
     { mode = { "n" }, "<leader>:", require("telescope.builtin").command_history, desc = "Commands History" },
@@ -65,7 +65,7 @@ M.telescope = {
 }
 
 M.neotree = {
-  keys = {
+  key = {
     { mode = { "n" }, "<C-e>", "<cmd>Neotree toggle<cr>", desc = "Toggle Explorer" },
     {
       mode = { "n" },
