@@ -1,9 +1,9 @@
-local maps = require "chai.mappings"
+local maps = require("chai.mappings").flash
 
 return {
   "folke/flash.nvim",
   event = "VeryLazy",
   vscode = true,
   opts = {},
-  keys = maps.flash,
+  keys = maps.keys,
 }
