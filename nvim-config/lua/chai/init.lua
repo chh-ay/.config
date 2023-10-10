@@ -35,10 +35,12 @@ require("lazy").setup({
   { "nvim-lua/plenary.nvim" },
   { "MunifTanjim/nui.nvim" },
 
+  -- Auto format
+  require "chai.plugins.format.autoformat",
+
   -- Custom plugins
   { import = "chai.plugins" },
   { import = "chai.plugins.lsp" },
-  { import = "chai.plugins.format" },
 }, {
   -- auto install missing colorscheme
   install = { colorscheme = { "catppuccin" }, missing = true },
