@@ -5,5 +5,5 @@ return {
   event = "VeryLazy",
   vscode = true,
   opts = {},
-  keys = maps.flash.key,
+  keys = maps.flash,
 }
