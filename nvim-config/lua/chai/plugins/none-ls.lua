@@ -16,6 +16,7 @@ return {
         formatting.clang_format,
         formatting.taplo, -- toml file
         formatting.fish_indent,
+        formatting.goimports,
 
         -- Diagnostics
         diagnostics.fish,
@@ -29,6 +30,8 @@ return {
         -- Code Actions
         code_actions.gitsigns,
         code_actions.cspell,
+        code_actions.gomodifytags,
+        code_actions.impl,
       },
     }
   end,

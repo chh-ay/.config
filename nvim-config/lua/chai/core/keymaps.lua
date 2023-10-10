@@ -59,3 +59,6 @@ vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Window Up" })
 
 -- Lazygit
 vim.keymap.set("n", "<leader>lg", "<cmd>LazyGit<cr>", { desc = "[L]azy [G]it" })
+
+-- Editor
+vim.keymap.set("n", "<leader>wf", "<cmd>ChaiFormatToggle<cr>", { desc = "[W]indow [F]ormat Toggle" })
