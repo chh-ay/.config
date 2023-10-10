@@ -3,15 +3,18 @@ return {
   "echasnovski/mini.nvim",
   version = false,
   config = function()
-    require("mini.bufremove").setup {
-      keys = maps.bufremove,
-    }
-
     require("mini.comment").setup {
       mappings = {
         comment = "gc",
         comment_line = "gcc",
         textobject = "gc",
+      },
+    }
+
+    require("mini.indentscope").setup {
+      symbol = "│",
+      options = {
+        try_as_border = true,
       },
     }
 
@@ -32,6 +35,7 @@ return {
       },
     }
 
+    require("mini.bufremove").setup {}
     require("mini.pairs").setup {}
   end,
 }
