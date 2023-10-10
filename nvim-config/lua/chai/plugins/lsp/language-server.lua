@@ -18,9 +18,7 @@ return {
       require("neodev").setup()
 
       local servers = {
-        clangd = {},
         gopls = {},
-        pyright = {},
         rust_analyzer = {},
         tsserver = {},
         html = { filetypes = { "html", "twig", "hbs" } },
@@ -60,10 +58,6 @@ return {
         "stylua",
         "shfmt",
         "bash-language-server",
-        "black",
-        "clang-format",
-        "clangd",
-        "codelldb",
         "cspell",
         "css-lsp",
         "eslint-lsp",
@@ -73,10 +67,10 @@ return {
         "lua-language-server",
         "markdownlint",
         "prettier",
-        "pyright",
-        "shfmt",
+        "rust_analyzer",
+        "shfmt", -- bash/shell
         "tailwindcss-language-server",
-        "taplo",
+        "taplo", -- toml
         "typescript-language-server",
         "yaml-language-server",
         "gopls",
@@ -86,7 +80,7 @@ return {
         "sonarlint-language-server",
       },
     },
-    ---@param opts MasonSettings | {ensure_installed: string[]}
+
     config = function(_, opts)
       require("mason").setup(opts)
       local mr = require "mason-registry"
