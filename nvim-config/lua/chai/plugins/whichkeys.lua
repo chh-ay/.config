@@ -12,6 +12,7 @@ return {
       ["<leader>b"] = { name = "+buffers" },
       ["<leader>f"] = { name = "+find" },
       ["<leader>l"] = { name = "+lazygit" },
+      ["<leader>w"] = { name = "+window" },
       ["<leader>e"] = { name = "toggle Explorer" },
     },
   },

@@ -1,3 +1,35 @@
+-- [[ Configure LSP ]]
+--  This function gets run when an LSP connects to a particular buffer.
+local on_attach = function(_, bufnr)
+  local nmap = function(keys, func, desc)
+    if desc then
+      desc = "LSP: " .. desc
+    end
+
+    vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc })
+  end
+
+  nmap("<leader>crn", vim.lsp.buf.rename, "[C]ode [R]e[n]ame")
+  nmap("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction")
+
+  nmap("gd", vim.lsp.buf.definition, "[G]oto [D]efinition")
+  nmap("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+  nmap("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+  nmap("<leader>cd", vim.lsp.buf.type_definition, "[C]ode Type [D]efinition")
+
+  -- See `:help K` for why this keymap
+  nmap("K", vim.lsp.buf.hover, "Hover Documentation")
+  nmap("<C-k>", vim.lsp.buf.signature_help, "Signature Documentation")
+
+  -- Lesser used LSP functionality
+  nmap("gD", vim.lsp.buf.declaration, "[G]oto [D]eclaration")
+
+  -- Create a command `:Format` local to the LSP buffer
+  vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
+    vim.lsp.buf.format()
+  end, { desc = "Format current buffer with LSP" })
+end
+
 return {
   {
     -- LSP Configuration & Plugins
@@ -11,7 +43,7 @@ return {
       { "j-hui/fidget.nvim", tag = "legacy", opts = { window = { blend = 0 } } },
 
       -- Additional lua configuration, makes nvim stuff amazing!
-      "folke/neodev.nvim",
+      { "folke/neodev.nvim", opts = {} },
     },
 
     config = function()
@@ -20,7 +52,20 @@ return {
       local servers = {
         gopls = {},
         rust_analyzer = {},
-        tsserver = {},
+        tsserver = {
+          keys = {
+            "<leader>coi",
+            function()
+              vim.lsp.buf.code_action { apply = true, context = { only = { "source.organizeImports.ts" }, diagnostics = {} } }
+            end,
+            desc = "[C]ode [O]rganize [I]mport",
+          },
+          settings = {
+            completions = {
+              completeFunctionCalls = true,
+            },
+          },
+        },
         html = { filetypes = { "html", "twig", "hbs" } },
 
         lua_ls = {
@@ -30,6 +75,10 @@ return {
           },
         },
       }
+      -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
+      local capabilities = vim.lsp.protocol.make_client_capabilities()
+      capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
+
       -- Ensure the servers above are installed
       local mason_lspconfig = require "mason-lspconfig"
 
@@ -60,13 +109,13 @@ return {
         "bash-language-server",
         "cspell",
         "css-lsp",
-        "eslint-lsp",
+        "eslint_d",
         "graphql-language-service-cli",
         "html-lsp",
         "json-lsp",
         "lua-language-server",
         "markdownlint",
-        "prettier",
+        "prettierd",
         "rust-analyzer",
         "shfmt", -- bash/shell
         "tailwindcss-language-server",
