@@ -1,4 +1,4 @@
-local map = require("chai.mappings").telescope
+local map = require("chai.mappings")
 
 return {
   "nvim-telescope/telescope.nvim",
@@ -8,7 +8,7 @@ return {
       build = "make",
     },
   },
-  keys = map.key,
+  keys = map.telescope.key
   opts = {
     defaults = {
       prompt_prefix = "  ",
