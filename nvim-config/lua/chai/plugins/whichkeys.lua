@@ -1,7 +1,3 @@
-if true then
-  return {}
-end
-
 return {
   "folke/which-key.nvim",
   event = "VeryLazy",
@@ -10,20 +6,13 @@ return {
     defaults = {
       mode = { "n", "v" },
       ["g"] = { name = "+goto" },
-      ["gz"] = { name = "+surround" },
+      ["ms"] = { name = "+mini.surround" },
       ["]"] = { name = "+next" },
       ["["] = { name = "+prev" },
-      ["<leader><tab>"] = { name = "+tabs" },
-      ["<leader>b"] = { name = "+buffer" },
-      ["<leader>c"] = { name = "+code" },
-      ["<leader>f"] = { name = "+file/find" },
-      ["<leader>g"] = { name = "+git" },
-      ["<leader>gh"] = { name = "+hunks" },
-      ["<leader>q"] = { name = "+quit/session" },
-      ["<leader>s"] = { name = "+search" },
-      ["<leader>u"] = { name = "+ui" },
-      ["<leader>w"] = { name = "+windows" },
-      ["<leader>x"] = { name = "+diagnostics/quickfix" },
+      ["<leader>b"] = { name = "+buffers" },
+      ["<leader>f"] = { name = "+find" },
+      ["<leader>l"] = { name = "+lazygit" },
+      ["<leader>e"] = { name = "toggle Explorer" },
     },
   },
   config = function(_, opts)
