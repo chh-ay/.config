@@ -1,8 +1,3 @@
-local disabledPlugins = {
-  {
-    "folke/todo-comments.nvim",
-    enabled = false,
-  },
+return {
+  { "nvim-pack/nvim-spectre", enabled = false },
 }
-
-return disabledPlugins

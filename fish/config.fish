@@ -115,7 +115,7 @@ alias lg="lazygit"
 alias timeSync="sudo ntpdate time.windows.com"
 
 # pnpm
-set -gx PNPM_HOME "/home/chhay/.local/share/pnpm"
+set -gx PNPM_HOME "~/.local/share/pnpm"
 if not string match -q -- $PNPM_HOME $PATH
     set -gx PATH "$PNPM_HOME" $PATH
 end
