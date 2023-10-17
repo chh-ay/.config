@@ -6,8 +6,6 @@
 !/starship
 !/lazygit
 /lazygit/state.yml
-!/nvim-scratch
-!/nvim-config
 
 # file
 !.gitignore

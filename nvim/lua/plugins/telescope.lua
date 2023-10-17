@@ -1,10 +1,10 @@
-local map = require("plugins.keymap.mappings")
-return {
+local keymaps = require "utils.keymaps"
 
+return {
   {
     "nvim-telescope/telescope.nvim",
     keys = function()
-      return map.telescope
+      return keymaps.Telescope
     end,
   },
   {
@@ -14,7 +14,7 @@ return {
       "nvim-telescope/telescope-fzf-native.nvim",
       build = "make",
       config = function()
-        require("telescope").load_extension("fzf")
+        require("telescope").load_extension "fzf"
       end,
     },
   },
