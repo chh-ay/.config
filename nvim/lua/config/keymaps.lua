@@ -33,8 +33,6 @@ keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Window Right" })
 keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Window down" })
 keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Window Up" })
 
-remove("n", "<S-h>")
-remove("n", "<S-l>")
 remove("n", "<leader>gg")
 remove("n", "<leader>gG")
 remove("n", "<leader>l")
