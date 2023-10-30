@@ -42,7 +42,7 @@ return {
       vim.list_extend(opts.sources, {
         diagnostics.cspell.with {
           diagnostics_postprocess = function(diagnostic)
-            diagnostic.severity = vim.diagnostic.severity["W"] ---@
+            diagnostic.severity = vim.diagnostic.severity.INFO ---@
           end,
         },
 
