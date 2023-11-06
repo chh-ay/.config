@@ -5,6 +5,7 @@
 
 - Windows have to use WSL2 to properly utilized this configuration file
 - Windows Also have to install [Chocolatey](https://chocolatey.org/install)
+- Nerd font is needed to display text properly (recommend [Jetbrains Nerd Font](https://www.nerdfonts.com/font-downloads))
 
 - Wezterm (Terminal emulator)
 
@@ -52,6 +53,19 @@
       ```
 
     - After installing TPM, open up Tmux and press `prefix` + <kbd>I</kbd> to fetch the plugin.
+
+- Neovim
+  - Linux:
+
+    - ```sh
+      Ubuntu/Debian: 
+        sudo add-apt-repository ppa:neovim-ppa/unstable (or stable)
+        sudo apt update
+        sudo apt install neovim
+
+      Arch: 
+        sudo pacman -S neovim
+      ```
 
 ### Need to write a guide on different system (eg. deb, fedora, arch, windows)
 
