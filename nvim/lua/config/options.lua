@@ -4,7 +4,7 @@
 
 local opt = vim.opt
 
-opt.scrolloff = 8
+opt.scrolloff = 12
 
 opt.tabstop = 2
 opt.softtabstop = 2
