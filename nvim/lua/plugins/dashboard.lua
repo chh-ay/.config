@@ -9,7 +9,7 @@ local header = [[
                   ╚══╝    ╚══╝  ╚═══╝╝╚═╝  ╚══╝               
 ]]
 
-header = string.rep("\n", 12) .. header .. "\n\n"
+header = string.rep("\n", 4) .. header .. "\n\n"
 
 -- stylua: ignore
 local center = {
@@ -25,22 +25,26 @@ for _, button in ipairs(center) do
   button.key_format = "%s"
 end
 
+-- stylua: ignore
+local shortcut = {
+  { action = "lua LazyVim.pick()()",                           desc = "Find File ",       icon = "  ", key = "f" },
+  { action = 'lua require("persistence").load()',              desc = "Restore Session ", icon = " 󰦛 ", key = "s" },
+  { action = "ene | startinsert",                              desc = "New File ",        icon = "  ", key = "n" },
+  { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = "Quit ",            icon = "  ", key = "q", },
+}
+
 local footer = {
   "",
-  "   nvim version " .. version.major .. "." .. version.minor,
+  "nvim version " .. version.major .. "." .. version.minor,
 }
 
 return {
   "nvimdev/dashboard-nvim",
   opts = {
-    theme = "doom",
-    hide = {
-      -- Statusline conflict if not false
-      statusline = false,
-    },
+    theme = "hyper",
     config = {
       header = vim.split(header, "\n"),
-      center = center,
+      shortcut = shortcut,
       footer = footer,
       packages = { enable = false },
     },
