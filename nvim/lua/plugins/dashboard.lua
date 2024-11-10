@@ -30,7 +30,7 @@ local shortcut = {
   { action = "lua LazyVim.pick()()",                           desc = "Find File ",       icon = "  ", key = "f" },
   { action = 'lua require("persistence").load()',              desc = "Restore Session ", icon = " 󰦛 ", key = "s" },
   { action = "ene | startinsert",                              desc = "New File ",        icon = "  ", key = "n" },
-  { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = "Quit ",            icon = "  ", key = "q", },
+  { action = function() vim.api.nvim_input("<cmd>qa<cr>") end, desc = "Quit ",            icon = "  ", key = "q" },
 }
 
 local footer = {

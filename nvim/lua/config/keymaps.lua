@@ -15,14 +15,17 @@
 --    M - Meta/Command/Alt
 --    S - Shift
 
+--- Really useful rebind, should try it out some days
+-- setxkbmap -option "caps:escape,shift:both_capslock"
+
 local keymap = vim.keymap.set
 local remove = vim.keymap.del
-
 --------------------- Tmux Navigation ------------------------
 keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Window left" })
 keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Window Right" })
 keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Window down" })
 keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Window Up" })
+keymap("n", "<M-[>", "<esc>", { desc = "Hi insert mode" })
 
 -- Lazygit keybind
 remove("n", "<leader>K")
@@ -34,20 +37,22 @@ remove("n", "<leader>gf")
 remove("n", "<leader>gl")
 remove("n", "<leader>gL")
 --- Rebind
-keymap("n", "<leader>lgg", function()
-  LazyVim.lazygit({ cwd = LazyVim.root.git() })
-end, { desc = "Lazygit (Root Dir)" })
-keymap("n", "<leader>lgG", function()
-  LazyVim.lazygit()
-end, { desc = "Lazygit (cwd)" })
-keymap("n", "<leader>lgb", LazyVim.lazygit.blame_line, { desc = "Git Blame Line" })
-keymap("n", "<leader>lgB", LazyVim.lazygit.browse, { desc = "Git Browse" })
+if vim.fn.executable("lazygit") == 1 then
+  keymap("n", "<leader>lg", function()
+    Snacks.lazygit({ cwd = LazyVim.root.git() })
+  end, { desc = "Lazygit (Root Dir)" })
+  keymap("n", "<leader>lG", function()
+    Snacks.lazygit()
+  end, { desc = "Lazygit (cwd)" })
+  keymap("n", "<leader>gb", Snacks.gitbrowse(), { desc = "Git Browse" })
+end
 
 -- LazyVim keybind
 remove("n", "<leader>l")
 remove("n", "<leader>L")
 --- Rebind
-keymap("n", "<leader>ll", "<cmd>Lazy<cr>", { desc = "Lazy" })
-keymap("n", "<leader>lL", function()
+keymap("n", "<leader>lv", "<cmd>Lazy<cr>", { desc = "LazyVim" })
+keymap("n", "<leader>lx", "<cmd>LazyExtras<cr>", { desc = "LazyVim Extras" })
+keymap("n", "<leader>lV", function()
   LazyVim.news.changelog()
 end, { desc = "LazyVim Changelog" })
