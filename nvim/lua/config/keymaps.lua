@@ -44,7 +44,9 @@ if vim.fn.executable("lazygit") == 1 then
   keymap("n", "<leader>lG", function()
     Snacks.lazygit()
   end, { desc = "Lazygit (cwd)" })
-  keymap("n", "<leader>gb", Snacks.gitbrowse(), { desc = "Git Browse" })
+  keymap("n", "<leader>gb", function()
+    Snacks.gitbrowse()
+  end, { desc = "Git Browse" })
 end
 
 -- LazyVim keybind
