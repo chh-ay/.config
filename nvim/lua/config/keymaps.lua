@@ -26,3 +26,5 @@ keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Window Right" })
 keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Window down" })
 keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Window Up" })
 keymap("n", "<M-[>", "<esc>", { desc = "Hi insert mode" })
+
+keymap("v", "D", '"_d', { desc = "Delete to blackhole register in visual mode" })
