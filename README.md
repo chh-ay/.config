@@ -71,3 +71,5 @@
       ```
 
 ### I'm only writing about system that I use personally
+
+#### Packages I use a lot and required: Zoxide
