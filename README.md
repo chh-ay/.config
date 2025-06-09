@@ -5,16 +5,18 @@
 
 - Windows have to use WSL2 to properly utilized this configuration file
 - Windows Also have to install [Chocolatey](https://chocolatey.org/install)
-- Nerd font is needed to display text properly (recommend [Jetbrains Nerd Font](https://www.nerdfonts.com/font-downloads))
+- Nerd font is needed to display text properly (My font [D2Coding](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/D2Coding.zip))
 
-- Wezterm (Terminal emulator)
+- Terminal Emulator
 
   - ```sh
-    Arch:
-    sudo pacman -S wezterm
+    Windows: Wezterm
+
+    Linux:
+      ghostty: yay -S ghostty-git
     ```
 
-- Fish shell (Because I prefer it over zsh)
+- Fish shell
 
   - ```sh
     Ubuntu/Debian:
@@ -46,6 +48,7 @@
 
 - Tmux
   - [Tmux Wiki](https://github.com/tmux/tmux/wiki/Installing)
+  - [Tmux Cheatsheet](https://tmuxcheatsheet.com/)
   - Tmux TPM (Tmux Plugin Manager)
 
     - ```sh
@@ -54,7 +57,7 @@
 
     - After installing TPM, open up Tmux and press `prefix` + <kbd>I</kbd> to fetch the plugin.
 
-- Neovim
+- Neovim (Still not much configured)
   - Linux:
 
     - ```sh
@@ -67,6 +70,4 @@
         sudo pacman -S neovim
       ```
 
-### Need to write a guide on different system (eg. deb, fedora, arch, windows)
-
-### And get some photo of the configs
+### I'm only writing about system that I use personally
