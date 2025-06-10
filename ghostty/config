@@ -1,7 +1,13 @@
+theme = catppuccin-mocha
+
+font-family = "D2CodingLigature Nerd Font"
 font-size = 14
 
-background-opacity = 0.9
-
+background-opacity = 0.75
 background-blur-radius = 10
 
-theme = catppuccin-mocha
+window-decoration = none
+maximize
+
+auto-update = check
+auto-update-channel = stable
