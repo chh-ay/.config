@@ -13,7 +13,6 @@ end
 set -U __done_min_cmd_duration 10000
 set -U __done_notification_urgency_level low
 
-
 ## Environment setup
 # Apply .profile: use this to put fish compatible .profile stuff in
 if test -f ~/.fish_profile
@@ -39,7 +38,6 @@ if status --is-interactive
     # source ("/usr/bin/starship" init fish --print-full-init | psub)
     starship init fish | source
 end
-
 
 # Fish command history
 function history
@@ -105,21 +103,13 @@ alias jctl="journalctl -p 3 -xb"
 # Recent installed packages
 alias rip="expac --timefmt='%Y-%m-%d %T' '%l\t%n %v' | sort | tail -200 | nl"
 
-# neovim alias
+# aliases
 alias v="nvim"
-
-# git
 alias lg="lazygit"
 
 # time desync issue with wsl2 solved
 alias timeSync="sudo ntpdate time.windows.com"
 
-# pnpm
-set -gx PNPM_HOME "~/.local/share/pnpm"
-if not string match -q -- $PNPM_HOME $PATH
-  set -gx PATH "$PNPM_HOME" $PATH
-end
-# pnpm end
 # bun
 set --export BUN_INSTALL "$HOME/.bun"
 set --export PATH $BUN_INSTALL/bin $PATH
@@ -129,3 +119,6 @@ set --export DELTA_FEATURES +side-by-side
 
 # starship config file location
 set --export STARSHIP_CONFIG ~/.config/starship/starship.toml
+
+# zoxide
+zoxide init fish | source
