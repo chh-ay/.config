@@ -5,6 +5,20 @@
 
 - Windows have to use WSL2 to properly utilized this configuration file
 - Windows Also have to install [Chocolatey](https://chocolatey.org/install)
+
+- Linux required [yay](https://github.com/Jguer/yay)
+  - zoxide:
+
+    ```sh
+    curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+    ```
+
+  - bun:
+
+    ```sh
+    curl -fsSL https://bun.sh/install | bash   
+    ```
+
 - Nerd font is needed to display text properly (My font [D2Coding](https://github.com/ryanoasis/nerd-fonts/releases/download/v3.4.0/D2Coding.zip))
 
 - Terminal Emulator
@@ -13,7 +27,7 @@
     Windows: Wezterm
 
     Linux:
-      ghostty: yay -S ghostty-git
+      ghostty: yay ghostty-git
     ```
 
 - Fish shell
@@ -25,7 +39,7 @@
       sudo apt install fish
 
     Arch: 
-      sudo pacman -S fish
+      yay fish
     ```
 
   - ```sh
@@ -67,9 +81,32 @@
         sudo apt install neovim
 
       Arch: 
-        sudo pacman -S neovim
+        yay neovim
+      ```
+
+  - Dependencies:
+    - luarock (linux)
+
+      ```sh
+        yay luarocks
+      ```
+
+    - fnm (linux)
+
+      ```sh
+        curl -fsSL https://fnm.vercel.app/install | bash
+      ```
+
+    - layzgit (linux)
+
+      ```sh
+        yay lazygit
+      ```
+
+    - Git delta diffing (linux)
+
+      ```sh
+        yay git-delta
       ```
 
 ### I'm only writing about system that I use personally
-
-#### Packages I use a lot and required: Zoxide
