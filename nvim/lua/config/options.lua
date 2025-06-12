@@ -12,3 +12,5 @@ opt.shiftwidth = 2
 opt.expandtab = true
 
 opt.updatetime = 100
+
+opt.clipboard = "unnamedplus"
