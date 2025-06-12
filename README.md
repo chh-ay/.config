@@ -109,4 +109,10 @@
         yay git-delta
       ```
 
+    - Clipboard
+
+      ```sh
+        yay wl-clipboard
+      ```
+
 ### I'm only writing about system that I use personally
