@@ -1,12 +1,14 @@
 /*
+!/atuin
+!/btop
 !/fish
+!/ghostty
+!/lazygit
 !/nvim
+!/starship
 !/tmux
 !/wezterm
-!/starship
-!/lazygit
-!/ghostty
-!/btop
+
 /lazygit/state.yml
 
 # file
