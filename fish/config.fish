@@ -37,6 +37,12 @@ end
 if status --is-interactive
     # source ("/usr/bin/starship" init fish --print-full-init | psub)
     starship init fish | source
+
+    # zoxide
+    zoxide init fish | source
+
+    # better history ctrl + r
+    atuin init fish | source
 end
 
 # Fish command history
@@ -119,6 +125,3 @@ set --export DELTA_FEATURES +side-by-side
 
 # starship config file location
 set --export STARSHIP_CONFIG ~/.config/starship/starship.toml
-
-# zoxide
-zoxide init fish | source
